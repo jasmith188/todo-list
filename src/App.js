@@ -1,16 +1,13 @@
 import './App.css';
 import RandomQuote from './RandomQuote';
+import TodoForm from './TodoForm';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <h1>Todo App</h1>
       <RandomQuote />
-     
-      <br />
-      <form action="">
-        <input placeholder="A New Task" type="text" />
-      </form>
+      <TodoForm />
     </div>
   );
 }
