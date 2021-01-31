@@ -9,10 +9,15 @@ const TodoForm = ({ addTodo }) => {
     addTodo(value);
     setValue('');
   };
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
   return (
-    <div>
+    <div className='todoForm__input' >
       <form onSubmit={handleSubmit}>
         <input
+          placeholder="type here"
           className="input"
           type="text"
           value={value}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
+import './RandomQuote.css'
 
 function RandomQuote() {
   const [quote, setQuote] = useState('');
@@ -24,10 +25,10 @@ function RandomQuote() {
   return (
     <div>
       <Card>
-        <Card.Body>
-          <blockquote className="blockquote mb-0">
+        <Card.Body className='blockquote'>
+          <blockquote className="blockquote__quote">
             <p>{quote}</p>
-            <footer className="blockquote-footer">
+            <footer className="blockquote__author">
               {author ? '-' + author : null}
             </footer>
           </blockquote>

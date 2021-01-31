@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import RandomQuote from './RandomQuote';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
-
+import './App.css'
 function App() {
   const [todos, setTodos] = useState([
     {
@@ -30,15 +30,27 @@ function App() {
     setTodos(newTodos);
   };
 
-  const removeTodo = index => {
+  const removeTodo = (index) => {
     const newTodos = [...todos];
     newTodos.splice(index, 1);
     setTodos(newTodos);
   };
 
+  const updateTodo = (index) => {
+    const newTodos = [...todos]
+  }
+
+  // const updateTodo = (todoId, newValue) => {
+  //   if (!newValue.todo || /^\s*$/.test(newValue.todo)) {
+  //     return;
+  //   }
+
+  //   setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+  // };
+
   return (
     <div className="app">
-      <h1>Todo List</h1>
+      <h1 className='title' >Todo List 🚀  </h1>
       <RandomQuote />
       <br />
       <TodoForm addTodo={addTodo} />
@@ -50,6 +62,7 @@ function App() {
             todo={todo}
             completeTodo={completeTodo}
             removeTodo={removeTodo}
+            updateTodo={updateTodo}
           />
         ))}
       </div>
