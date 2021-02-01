@@ -13,9 +13,7 @@ const TodoForm = ({ addTodo }) => {
     setValue('');
   };
 
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
+  
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>

@@ -3,10 +3,9 @@ import RandomQuote from './RandomQuote';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
 import './App.css';
-import TodoList from './TodoList';
-function App(props) {
+function App() {
 
-  const saveditems = JSON.parse(localStorage.getItem('items'));
+ 
   const [value, setValue] = useState('');
   const [todos, setTodos] = useState([
     // {
