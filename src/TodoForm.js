@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 
 const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState('');
+  const changeHandler = ({ target }) => {
+    setValue(target.value.toUpperCase());
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,14 +17,14 @@ const TodoForm = ({ addTodo }) => {
     setValue(e.target.value);
   };
   return (
-    <div className='todoForm__input' >
+    <div className="form">
       <form onSubmit={handleSubmit}>
         <input
-          placeholder="type here"
-          className="input"
+          className="todoForm__input"
           type="text"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+        //   onChange={(e) => setValue(e.target.value)}
+          onChange={changeHandler}
         />
       </form>
     </div>

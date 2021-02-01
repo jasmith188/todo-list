@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Todo = ({ todo, index, completeTodo, removeTodo, updateTodo }) => {
+const Todo = ({ todo, index, completeTodo, removeTodo, editTodo }) => {
   return (
     <div className="card">
       <div
@@ -8,7 +8,7 @@ const Todo = ({ todo, index, completeTodo, removeTodo, updateTodo }) => {
         style={{
           textDecoration: todo.isCompleted ? 'line-through' : '',
           textDecorationColor: todo.isCompleted ? 'red' : '',
-          color: todo.isCompleted ? 'darkblue' : '',
+          color: todo.isCompleted ? 'green' : '',
         }}
       >
         {todo.text}
@@ -25,7 +25,7 @@ const Todo = ({ todo, index, completeTodo, removeTodo, updateTodo }) => {
         >
           💩
         </button>
-        <button className="todo__button" onClick={(e) => updateTodo(index)}>
+        <button className="todo__button" onClick={() => editTodo(index)}>
           Edit
         </button>
       </div>
