@@ -21,6 +21,10 @@ function App() {
     //   isCompleted: false,
     // },
   ]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
   
 
   const handleChange = (e) => {
@@ -93,6 +97,7 @@ useEffect(() => {
             todo={todo}
             completeTodo={completeTodo}
             removeTodo={removeTodo}
+            onSubmit={handleSubmit}
           />
         ))}
       </div>
