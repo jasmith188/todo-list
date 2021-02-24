@@ -4,9 +4,7 @@ import Todo from './Todo';
 import TodoForm from './TodoForm';
 import './App.css';
 function App() {
-
- 
-  const [value, setValue] = useState('');
+  // const [value, setValue] = useState('');
   const [todos, setTodos] = useState([
     // {
     //   text: 'Learn about React',
@@ -23,21 +21,20 @@ function App() {
   ]);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-  }
-  
-
-  const handleChange = (e) => {
-    setValue(
-      e.target.value
-        .toLowerCase()
-        .split(' ')
-        .map((word) => {
-          return word.charAt(0).toUpperCase() + word.slice(1);
-        })
-        .join(' ')
-    );
+    e.preventDefault();
   };
+
+  // const handleChange = (e) => {
+  //   setValue(
+  //     e.target.value
+  //       .toLowerCase()
+  //       .split(' ')
+  //       .map((word) => {
+  //         return word.charAt(1).toUpperCase() + word.slice(1);
+  //       })
+  //       .join(' ')
+  //   );
+  // };
 
   const addTodo = (text) => {
     const newTodos = [...todos, { text }];
@@ -63,10 +60,10 @@ function App() {
     }
   }, []);
 
-useEffect(() => {
+  useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
-  
+
   // const updateTodo = (index) => {
   //   const newTodos = [...todos]
   // }
@@ -90,8 +87,8 @@ useEffect(() => {
       <div className="todo__list">
         {todos.map((todo, index) => (
           <Todo
-            onChange={handleChange}
-            value={value}
+            // onChange={handleChange}
+            // value={value}
             key={index}
             index={index}
             todo={todo}

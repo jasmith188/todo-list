@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState('');
   const changeHandler = ({ target }) => {
-    setValue(target.value.toUpperCase());
+    setValue(target.value);
   };
 
   const handleSubmit = (e) => {
